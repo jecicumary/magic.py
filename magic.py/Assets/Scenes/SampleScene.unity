@@ -769,6 +769,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1971818348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1155297839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155297840}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1155297840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155297839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.324614, y: 2.36, z: -7.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245712481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,29 +1066,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elements:
-  - keyword: we
+  - keyword: move Sphere
     onKeywordMatch:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1792093920}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 101600383}
+          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_MethodName: set_parent
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1155297840}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keyword: re
+  - keyword: 'import pygame, math, sys  pygame.init() w, h, c, r, a = 800, 600, (255,
+      255, 255), 100, 0 s, cl = pygame.display.set_mode((w, h)), pygame.time.Clock() 
+      while True:     for e in pygame.event.get():         if e.type == pygame.QUIT:
+      pygame.quit(), sys.exit()     a += 0.01     x, y = w // 2 + int(r * math.cos(a)),
+      h // 2 + int(r * math.sin(a))     s.fill((0, 0, 0))     pygame.draw.rect(s,
+      c, (x, y, 50, 50))     pygame.display.flip(), cl.tick(60) '
     onKeywordMatch:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 101600379}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+        - m_Target: {fileID: 1792093922}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1164,7 +1200,7 @@ GameObject:
   - component: {fileID: 1792093922}
   - component: {fileID: 1792093921}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: cube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,3 +1519,4 @@ SceneRoots:
   - {fileID: 156818786}
   - {fileID: 1792093924}
   - {fileID: 101600383}
+  - {fileID: 1155297840}
